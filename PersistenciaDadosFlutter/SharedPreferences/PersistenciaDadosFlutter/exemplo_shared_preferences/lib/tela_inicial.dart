@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TelaInicial extends StatefulWidget{// janela com alteração de estado (setState)
+class TelaInicial extends StatefulWidget{
+  const TelaInicial({super.key});
+// janela com alteração de estado (setState)
   @override
   _TelaInicialState createState() => _TelaInicialState();
 }
@@ -10,7 +12,7 @@ class TelaInicial extends StatefulWidget{// janela com alteração de estado (se
 //construção da Janela do Página
 class _TelaInicialState extends State<TelaInicial>{
   //atributos
-  TextEditingController _nomeController = TextEditingController();
+  final TextEditingController _nomeController = TextEditingController();
   String _nome = "";
   bool _darkMode = false;
 
@@ -26,10 +28,10 @@ class _TelaInicialState extends State<TelaInicial>{
     if(_nomeController.text.trim().isEmpty){
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Preencha o Nome do Usuário")));
     }else{
-      SharedPreferences _prefs = await SharedPreferences.getInstance(); // espera estabelece a conexão para pegar a informação (await)
+      SharedPreferences prefs = await SharedPreferences.getInstance(); // espera estabelece a conexão para pegar a informação (await)
       _nome = _nomeController.text;
       //salvar no shared preference a chave / valor
-      _prefs.setString("nome",_nome);
+      prefs.setString("nome",_nome);
       setState(() {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Nome do Usuário Preenchido")));
         _nomeController.clear();
@@ -39,18 +41,18 @@ class _TelaInicialState extends State<TelaInicial>{
 
   void _mudarTema() async{
     _darkMode = !_darkMode; //inverte o valor da boolean
-    SharedPreferences _prefs = await SharedPreferences.getInstance();
-    _prefs.setBool("darkMode",_darkMode);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("darkMode",_darkMode);
     setState(() {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_darkMode ? "Modo Escuro" : "Modo Claro")));
     });
   }
 
   void _carregarNome() async{
-    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      _nome = _prefs.getString("nome") ?? ""; //carrega a informação do da chave "nome" , caso nulo carrega ""
-      _darkMode = _prefs.getBool("darkMode") ?? false;
+      _nome = prefs.getString("nome") ?? ""; //carrega a informação do da chave "nome" , caso nulo carrega ""
+      _darkMode = prefs.getBool("darkMode") ?? false;
     });
   }
 
