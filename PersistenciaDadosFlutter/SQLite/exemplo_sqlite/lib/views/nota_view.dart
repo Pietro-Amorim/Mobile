@@ -85,41 +85,41 @@ class _NotaViewState extends State<NotaView>{
   
   void _updateNota(Nota nota) async{
     Nota notaAtualizada = Nota(titulo: "", conteudo: "");
-    showDialog( 
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text("Atualizar Nota"),
-        content: TextField()(
-          onChanged: (value) {
-            Nota notaAtualizada = Nota(
-              id: nota.id,
-              titulo: "${nota.titulo} (Editado)",
-              conteudo: value
-            );
-          }
-        ),
+showDialog(
+  context: context,
+  builder: (context) => AlertDialog(
+    title: Text("Atualizar Nota"),
+    content: TextField(
+      onChanged: (value) {
+        Nota notaAtualizada = Nota(
+          id: nota.id,
+          titulo: "${nota.titulo} (Editado)",
+          conteudo: value
+        );
+      },
+    ),
         actions: [
         TextButton(
           onPressed: (){
             _controller.updateNota(notaAtualizada);
             _carregarDados();
             Navigator.of(context).pop(); //fecha o alertDialog
-          }
+          },
           child: Text("Atualizar")),
         ]
         
       )
-    )
+    );
   }
   void _deleteNota(int id) async{
     try{
       await _controller.deleteNota(id);
       _carregarDados();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Nota Deletada com Sucesso"))),
+        SnackBar(content: Text("Nota Deletada com Sucesso")));
     } catch(e){
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Erro ao Deletar a Nota, $e")));,
+        SnackBar(content: Text("Erro ao Deletar a Nota, $e")));
     }
   }
 }
