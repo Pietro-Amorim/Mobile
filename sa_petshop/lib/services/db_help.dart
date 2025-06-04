@@ -1,6 +1,7 @@
 //classe de apoio as conexões do BD
 //classe singleton -> instância única
 import 'package:path/path.dart';
+import 'package:sa_petshop/models/consulta_model.dart';
 import 'package:sa_petshop/models/pet_model.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -93,5 +94,29 @@ class DbHelper{
   }
 
   //métodos CRUD para consultas
+  // Create Consulta
+  Future<int> insertConsulta(Consulta consulta) async {
+    final db = await database;
+    return await db.insert('consultas', consulta.toMap());
+  }
 
+  // Get Consultas -> By Pet
+  Future<List<Consulta>> getConsultaByPetId(int petId) async{
+    final db = await database;
+    final List<Map<String,dynamic>> maps = await db.query(
+      "consultas",
+      where: "pet_id = ?",
+      whereArgs: [petId],
+      orderBy: "data_hora ASC" //ordenar por data e hora da Consulta
+    ); // seleciona todas as consultas do pet com o id passado como parâmetro
+    // converter os valores da Map para obj
+    return maps.map((e) => Consulta.fromMap(e)).toList();
+  }
+
+  // Delete Consulta
+  Future<int> deleteConsulta(int id) async{
+    final db = await database;
+    return await db.delete('consultas', where: 'id = ?', whereArgs: [id]);
+  }
+  
 }

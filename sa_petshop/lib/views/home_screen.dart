@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sa_petshop/controllers/pet_controller.dart';
+import 'package:sa_petshop/controllers/path_controller.dart';
 import 'package:sa_petshop/models/pet_model.dart';
+import 'package:sa_petshop/views/cadastro_pet_screen.dart';
+import 'package:sa_petshop/views/detalhe_pet_screen.dart';
 
 class HomeScreen extends StatefulWidget{
   @override
@@ -14,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen>{
   bool _isLoading = true; //enquanto carrega info do BD
 
   @override
-  void initState() {
+  void initState() {  //método para rodar antes de qualquer coisa(busca as informações antes de buildar a tela)
     super.initState();
     _carregarDados();
   }
@@ -52,7 +54,9 @@ class _HomeScreenState extends State<HomeScreen>{
                 return ListTile(  //item da lista
                   title: Text("${pet.nome} - ${pet.raca}"),
                   subtitle: Text("${pet.nomeDono} - ${pet.telefone}"),
-                  // onTap -> navegar para o pet
+                  // onTap -> navegar para os detalhes do pet
+                  onTap: () => Navigator.push(context, 
+                    MaterialPageRoute(builder: (context) => DetalhePetScreen(petId: pet.id!))),
                   //onLongPress -> excluir o pet
                 );
               }),
@@ -61,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen>{
         tooltip: "Adicionar Pet",
         child: Icon(Icons.add),
         onPressed: () async {
-          await Navigator.push(context, 
+          await Navigator.push(context, // navegação para a tela de cadastro
           MaterialPageRoute(builder: (context) => CadastroPetScreen()));
         },
       ),
