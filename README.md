@@ -1,6 +1,6 @@
-## Curso Mobile
- - Introdução a POO
-    - Java 
+# Curso Mobile
+ > Introdução a POO
+    > Java 
         - Insalação e Configuração
         - Lógica de Programação em Java(calculadora)
         - Conceitos:
@@ -10,8 +10,8 @@
             - polimorfismo
             - encapsulamento
             - abstração
- - Introdução a aplicativos Mobile
-    - Tipos de DEsenvolvimento
+ > Introdução a aplicativos Mobile
+    > Tipos de DEsenvolvimento
         - Nativo
             - Android:
                 - IDE: Android Studio
