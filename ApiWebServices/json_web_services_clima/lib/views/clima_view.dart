@@ -67,7 +67,9 @@ class _ClimaViewState extends State<ClimaView>{
               Text("Descrição: ${_clima!.descricao}"),
             ] else if (_erro != null) ...[
               Text(_erro!, style: const TextStyle(color: Color.fromARGB(255, 255, 0, 0))),
-            ],
+            ] else ... [
+              Text("Procure uma cidade")
+            ]
           ],
         ),
       ),
