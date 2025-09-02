@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../models/nota_model.dart';
 
 class NotaView extends StatefulWidget{
+  const NotaView({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _NotaViewState();

@@ -3,9 +3,8 @@ import 'package:recebimento_pedidos/controllers/pedido_controller.dart';
 import 'package:recebimento_pedidos/controllers/produto_controller.dart';
 import 'package:sqflite/sqflite.dart';
 import '../database/app_database.dart';
-import '../models/pedido.dart';
 import '../models/item_pedido.dart';
-import '../models/produto.dart'; // Para carregar o produto associado ao item
+// Para carregar o produto associado ao item
 
 class PedidoController {
   final AppDatabase _appDatabase = AppDatabase();

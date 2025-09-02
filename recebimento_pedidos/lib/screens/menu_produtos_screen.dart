@@ -4,7 +4,6 @@ import 'package:recebimento_pedidos/models/pedido.dart';
 import '../models/produto.dart';
 import '../models/item_pedido.dart';
 import '../controllers/produto_controller.dart';
-import '../controllers/pedido_controller.dart';
 import 'carrinho_screen.dart'; // Para navegar para o carrinho
 
 class MenuProdutosScreen extends StatefulWidget {

@@ -11,7 +11,7 @@ import 'package:sa_petshop/views/criar_consulta_screen.dart';
 class DetalhePetScreen extends StatefulWidget {
   final int petId; //receber o id do Pet
 
-  DetalhePetScreen({super.key, required this.petId}); // pega o Id pet
+  const DetalhePetScreen({super.key, required this.petId}); // pega o Id pet
 
   @override
   State<StatefulWidget> createState() {

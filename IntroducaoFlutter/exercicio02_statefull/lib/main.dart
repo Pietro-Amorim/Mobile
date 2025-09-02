@@ -5,6 +5,8 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -35,7 +37,7 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           children: [
             // Carrossel de Imagens usando PageView
-            Container(
+            SizedBox(
               height: 300,
               child: PageView.builder(
                 itemCount: imagens.length,

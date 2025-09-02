@@ -1,7 +1,7 @@
 // lib/models/item_pedido.dart
 import 'package:recebimento_pedidos/controllers/produto_controller.dart';
 
-import 'produto.dart'; // Importar Produto
+// Importar Produto
 
 class ItemPedido {
   int? id;

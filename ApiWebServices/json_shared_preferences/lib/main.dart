@@ -10,6 +10,8 @@ void main() {
 }
 
 class ConfigPage extends StatefulWidget {
+  const ConfigPage({super.key});
+
 
   @override
   State<StatefulWidget> createState() {

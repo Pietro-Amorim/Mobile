@@ -2,7 +2,6 @@
 import 'package:recebimento_pedidos/controllers/produto_controller.dart';
 import 'package:sqflite/sqflite.dart';
 import '../database/app_database.dart';
-import '../models/produto.dart';
 
 class ProdutoController {
   final AppDatabase _appDatabase = AppDatabase();

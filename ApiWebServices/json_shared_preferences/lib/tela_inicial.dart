@@ -9,7 +9,7 @@ class TelaInicial extends StatefulWidget{
   final String nomeUsuario;
 
   // construtor
-  TelaInicial({
+  const TelaInicial({super.key, 
     required this.temaEscuro,
     required this.nomeUsuario,
   });

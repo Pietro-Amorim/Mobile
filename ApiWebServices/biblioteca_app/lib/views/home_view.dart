@@ -1,7 +1,6 @@
 import 'package:biblioteca_app/views/emprestimos/emprestimos_list_view.dart';
 import 'package:biblioteca_app/views/livros/livros_list_view.dart';
 import 'package:biblioteca_app/views/usuarios/usuario_list_view.dart';
-import 'package:biblioteca_app/views/usuarios/usuario_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -16,7 +15,7 @@ class _HomeViewState extends State<HomeView> {
   int _index = 0;
   //lista de páginas de navegação
   final List<Widget> _paginas = [
-    const LivrosListView(),
+    const LivroListView(),
     const EmprestimosListView(),
     const UsuarioListView()
   ];

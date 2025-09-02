@@ -5,6 +5,8 @@ import 'package:sa_petshop/views/cadastro_pet_screen.dart';
 import 'package:sa_petshop/views/detalhe_pet_screen.dart';
 
 class HomeScreen extends StatefulWidget{
+  const HomeScreen({super.key});
+
   @override
   State<StatefulWidget> createState() => _HomeScreenState();
 }

@@ -2,7 +2,6 @@ import 'package:biblioteca_app/controllers/usuario_controller.dart';
 import 'package:biblioteca_app/models/usuario_model.dart';
 import 'package:biblioteca_app/views/usuarios/usuario_form_view.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 class UsuarioListView extends StatefulWidget {
   const UsuarioListView({super.key});

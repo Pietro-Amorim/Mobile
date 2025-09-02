@@ -31,7 +31,7 @@ class Pet{
 
   //fromMap : BD => obj
   factory Pet.fromMap(Map<String, dynamic> map){
-    return new Pet(
+    return Pet(
       id: map['id'] as int, // cast
       nome: map['nome'] as String,
       raca: map['raca'] as String,
