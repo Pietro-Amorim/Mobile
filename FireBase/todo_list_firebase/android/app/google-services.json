@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "485854166376",
+    "project_id": "todolistcasb",
+    "storage_bucket": "todolistcasb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485854166376:android:9ae3d1700a3f317686aadd",
+        "android_client_info": {
+          "package_name": "com.example.todo_list_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRsR3wqkdU0LRPJgvMerZTgXjUjv283rc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
