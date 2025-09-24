@@ -118,13 +118,14 @@ graph TD
 
 ```mermaid
 
-    A[Ínicio] --> B {Login Usuário}
+graph TD  
+
+    A[Início] --> B[Login Usuário]
     B --> C[Inserir Email e Senha] 
-    C --> D{Validar as Credenciais}
-    D --> E[Sim]
-    E --> F[Tela de Favoritos]
-    D --> G[Não]
-    G --> B
+    C --> D{Credenciais válidas?}
+    D -- Sim --> E[Tela de Favoritos]
+    D -- Não --> B
+
 
 ```
 
