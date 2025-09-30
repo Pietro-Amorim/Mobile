@@ -13,6 +13,7 @@ Construir um Aplicativo do Zero - O CineFavorite permitirá criar uma conta e bu
     - Salvar filmes nos Favoritos
 
 - ### não Funcionais
+    - Usuario saber sobre o BD no firebase
 
 ## Recursos do Projeto
 - Flutter/Dart
@@ -130,5 +131,7 @@ graph TD
 ```
 
 ## Prototipagem
+
+https://www.figma.com/design/OqwQqXc2s0LfvU5GST9TCd/Untitled?node-id=0-1&t=d4tbr0SmEKeqVG1p-1
 
 ## Codificação
