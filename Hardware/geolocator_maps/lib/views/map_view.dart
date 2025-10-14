@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:geolocator_maps/controllers/map_controller.dart';
+import 'package:geolocator_maps/controllers/point_controller.dart';
 import 'package:geolocator_maps/models/location_points.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -16,8 +16,8 @@ class MapView extends StatefulWidget {
 class _MapViewState extends State<MapView> {
   //atributos
   List<LocationPoints> listarPontos = []; //lista com os pontos marcados no map
-  final _pointController =  PointController();
-  final MapController _flutterMapController = MapController();// obj do controller para executar o método
+  final _pointController =  PointController(); //obj de controller da classe pointController
+  final MapController _flutterMapController = MapController();// obj do controller para manipulação do Mapa (criada pela biblioteca flutter_map)
 
   bool _isLoading = false;
   String? _erro;
@@ -32,6 +32,8 @@ class _MapViewState extends State<MapView> {
       //pegar a localização atual
       LocationPoints novaMarcacao = await _pointController.getcurrentLocation();
       listarPontos.add(novaMarcacao);
+      //deslocar o mapa para o ponto marcado 
+      _flutterMapController.move(LatLng(novaMarcacao.latitude, novaMarcacao.longitude), 11);
     } catch (e) {
       _erro = e.toString();
       //mostrar o erro
@@ -67,21 +69,30 @@ class _MapViewState extends State<MapView> {
           ),
         ],
       ),
+      // camada de mapa
       body: FlutterMap(
-        mapController: _flutterMapController ,
+        mapController: _flutterMapController, //manipular a imagem do mapa
         options: MapOptions(
-          initialCenter: LatLng(-23.561684, -46.625378), //Posição Inical SP
-          initialZoom: 13
+          initialCenter: LatLng(-22.3352, -47.2406),//quando abrir o mapa , cidade de limeira
+          initialZoom: 11,
         ),
+        //mapa funciona com camadas (pilhas - Stack)
         children: [
+          //camada imagem do mapa
           TileLayer(
             urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            userAgentPackageName: "com.example.sa_locator.maps",
+            userAgentPackageName: "com.example.geoloacator_maps",
           ),
-          // proxima camada pontos de MArcação
-        ]
-
-        ),
+          //Camda de Marcações
+          MarkerLayer(
+            markers: listarPontos.map(
+              (ponto) => Marker(
+                point: LatLng(ponto.latitude, ponto.longitude),
+                width: 50,
+                height: 50, 
+                child: Icon(Icons.location_on, color: Colors.red, size: 35,))
+            ).toList())
+        ])
     );
   }
 }
