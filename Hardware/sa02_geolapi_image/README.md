@@ -57,14 +57,11 @@ lib/
 │   ├── photo_detail_screen.dart   # Tela de detalhes ao clicar em uma foto
 │   └── main.dart                  # Ponto de entrada do app
 ```
-
-> *Não há pastas extras como `services`, `utils` ou `widgets` — tudo está organizado dentro das pastas principais.*
-
 ---
 
 ## 🔐 Permissões Necessárias
 
-### Android (`android/app/src/main/AndroidManifest.xml`)
+### Android (`android/app/src/debug/AndroidManifest.xml`)
 
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />
