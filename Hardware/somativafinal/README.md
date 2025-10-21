@@ -55,7 +55,7 @@ Aplicativo Flutter para **registro de ponto com geolocalização**, utilizando a
 
 1. **Clone ou crie o projeto**
    ```bash
-   flutter create --org br.edu --platforms=android,ios somativafinal
+   flutter create somativafinal --platforms=android
    cd somativafinal
    ```
 
@@ -73,7 +73,7 @@ Aplicativo Flutter para **registro de ponto com geolocalização**, utilizando a
 3. **Configure o Firebase**
    - Acesse o [Firebase Console](https://console.firebase.google.com/)
    - Crie um novo projeto
-   - Adicione os apps Android e/ou iOS
+   - Adicione os apps Android
    - Baixe os arquivos de configuração:
      - Android: `google-services.json` → coloque em `android/app/`
      - iOS: `GoogleService-Info.plist` → adicione via Xcode
@@ -93,11 +93,6 @@ Aplicativo Flutter para **registro de ponto com geolocalização**, utilizando a
      ```xml
      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-     ```
-   - **iOS**: adicione ao `ios/Runner/Info.plist`:
-     ```xml
-     <key>NSLocationWhenInUseUsageDescription</key>
-     <string>Este app precisa da localização para registrar seu ponto.</string>
      ```
 
 6. **Execute o app**
