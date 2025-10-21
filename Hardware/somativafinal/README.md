@@ -50,10 +50,6 @@ Aplicativo Flutter para **registro de ponto com geolocalização**, utilizando a
 
 ## 🛠️ 1. Configuração do Ambiente de Desenvolvimento
 
-### Pré-requisitos
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (versão 3.9+)
-- [Firebase Console](https://console.firebase.google.com/) (conta gratuita)
-- IDE: Android Studio, VS Code ou IntelliJ com plugin Flutter/Dart
 
 ### Passos para configurar
 
