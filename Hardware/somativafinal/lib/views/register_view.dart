@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../controllers/auth_controller.dart';
 
 /// Tela de registro de nova conta com e-mail e senha.
-/// Também usa Card com o mesmo estilo do LoginView.
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
