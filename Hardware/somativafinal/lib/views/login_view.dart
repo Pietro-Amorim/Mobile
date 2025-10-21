@@ -4,7 +4,6 @@ import 'register_view.dart';
 import 'home_view.dart';
 
 /// Tela de login com e-mail e senha.
-/// Usa um Card para agrupar os campos e botões, com tema verde musgo.
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
