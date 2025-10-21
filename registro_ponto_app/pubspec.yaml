@@ -1,0 +1,39 @@
+name: registro_ponto_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.10.0
+  cloud_firestore: ^4.7.0
+
+  # Geolocalização
+  geolocator: ^9.0.2
+  geocoding: ^2.1.5
+
+  # Biometria
+  local_auth: ^2.2.0
+
+  # UI / Feedback
+  fluttertoast: ^8.2.2
+  intl: ^0.18.1
+  cupertino_icons: ^1.0.5
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,32 @@
+name: somativafinal
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  connectivity_plus: ^7.0.0
+  flutter:
+    sdk: flutter
+  flutter_blue_plus: ^2.0.0
+  flutter_map: ^8.2.2
+  geolocator: ^14.0.2
+  http: ^1.5.0
+  image_picker: ^1.2.0
+  intl: ^0.20.2
+  latlong2: ^0.9.1
+  path: ^1.9.1
+  path_provider: ^2.1.5
+  cloud_firestore: ^4.8.4
+  firebase_core: ^2.32.0   # versão compatível com seu SDK
+  firebase_auth: ^4.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
